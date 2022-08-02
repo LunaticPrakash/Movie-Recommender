@@ -20,7 +20,7 @@ The similarity is based on following factors :-
  
     - You can enter the movie title and number of similar movies you want.
    
-   ![Output](./Output.png)
+   ![Output](https://github.com/LunaticPrakash/Movie-Recommender/blob/master/Output.png?raw=true)
    
    
 ## Requirements :- 

@@ -43,6 +43,21 @@
   width: 100%;
 }
 
+.note__info {
+  margin-top: 2rem;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.note__info strong {
+  color: #2c3e50;
+}
+
 @media screen and (max-width: 500px) {
   .container {
     width: 95%;

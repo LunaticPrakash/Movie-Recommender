@@ -67,6 +67,10 @@ function App() {
           <ResultTable data={results} type={resultType} />
         </div>
       </div>
+      <p className="note__info">
+  Note: The dataset contains mostly Hollywood movies, so results may be biased toward them.
+  Try searching for titles like <strong>Avatar</strong>, <strong>Batman</strong>, <strong>Superman</strong>, etc.
+</p>
     </>
   );
 }

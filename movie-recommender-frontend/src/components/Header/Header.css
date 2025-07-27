@@ -1,0 +1,14 @@
+.header__primary_text {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50; /* darker shade for elegance */
+    text-align: center;
+    margin-top: rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(89, 149, 253, 0.3);
+    background: linear-gradient(to right, #5995fd, #4d84e2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

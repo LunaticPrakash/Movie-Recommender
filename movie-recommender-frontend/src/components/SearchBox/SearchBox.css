@@ -1,0 +1,23 @@
+.searchbox__container {
+    padding: 8px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbox__input {
+    width: 70%;
+    height: 45px;
+    padding: 0 15px;
+    border: 2px solid #5995fd;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+    margin-top: 1rem;
+}
+
+.searchbox__input:focus {
+  border-color: #2c3e50;
+}

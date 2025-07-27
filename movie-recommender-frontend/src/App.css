@@ -40,7 +40,11 @@
 }
 
 .container__table {
-  max-width: fit-content;
-  width: 90%;
-  overflow-x: auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 95%;
+  }
 }

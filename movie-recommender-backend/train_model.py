@@ -1,18 +1,10 @@
 import pandas as pd
-import pickle
+import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import ast
 import os
 
-# Load data
-movies = pd.read_csv('dataset/tmdb_5000_movies.csv')
-credits = pd.read_csv('dataset/tmdb_5000_credits.csv')
-
-# Merge on 'id'
-movies = movies.merge(credits, left_on='id', right_on='movie_id')
-
-# Data Pre-processing
 def convert(obj):
     try:
         return [i['name'] for i in ast.literal_eval(obj)]
@@ -28,37 +20,42 @@ def get_director(obj):
     except:
         return ''
 
+movies = pd.read_csv('dataset/tmdb_5000_movies.csv', usecols=['id', 'overview', 'genres', 'keywords', 'title'])  # only needed cols
+credits = pd.read_csv('dataset/tmdb_5000_credits.csv', usecols=['movie_id', 'cast', 'crew'])
+
+movies = movies.merge(credits, left_on='id', right_on='movie_id')
+
 movies['genres'] = movies['genres'].apply(convert)
 movies['keywords'] = movies['keywords'].apply(convert)
-movies['cast'] = movies['cast'].apply(lambda x: convert(x)[:3])
+movies['cast'] = movies['cast'].apply(lambda x: convert(x)[:3])  # only top 3 cast members
 movies['crew'] = movies['crew'].apply(get_director)
 movies['overview'] = movies['overview'].fillna('')
 
-# Create tags
 movies['tags'] = movies['overview'] + ' ' + \
                  movies['genres'].apply(lambda x: ' '.join(x)) + ' ' + \
                  movies['keywords'].apply(lambda x: ' '.join(x)) + ' ' + \
                  movies['cast'].apply(lambda x: ' '.join(x)) + ' ' + \
                  movies['crew'].apply(str)
 
-new_df = movies[['id', 'original_title', 'tags', 'release_date', 'cast', 'genres']].copy()
+new_df = movies[['id', 'title', 'tags']].copy()
 new_df.dropna(inplace=True)
-new_df['tags'] = new_df['tags'].apply(lambda x: x.lower())
+new_df['tags'] = new_df['tags'].str.lower()
 
-# Vectorize using TF-IDF
+# === Vectorization ===
 tfidf = TfidfVectorizer(stop_words='english')
 tfidf_vectors = tfidf.fit_transform(new_df['tags'])
-similarity_tfidf = cosine_similarity(tfidf_vectors)
 
-# Vectorize using CountVectorizer
 count = CountVectorizer(stop_words='english')
 count_vectors = count.fit_transform(new_df['tags'])
-similarity_count = cosine_similarity(count_vectors)
 
-# Save models
+# === Cosine Similarity ===
+similarity_tfidf = cosine_similarity(tfidf_vectors, dense_output=False)
+similarity_count = cosine_similarity(count_vectors, dense_output=False)
+
+# === Save Models Efficiently ===
 os.makedirs('models', exist_ok=True)
-pickle.dump(new_df, open('models/movies.pkl', 'wb'))
-pickle.dump(similarity_tfidf, open('models/similarity_tfidf.pkl', 'wb'))
-pickle.dump(similarity_count, open('models/similarity_count.pkl', 'wb'))
+joblib.dump(new_df, 'models/movies.joblib', compress=3)
+joblib.dump(similarity_tfidf, 'models/similarity_tfidf.joblib', compress=3)
+joblib.dump(similarity_count, 'models/similarity_count.joblib', compress=3)
 
-print("Saved both TF-IDF and CountVectorizer models!")
+print("Both TF-IDF and Count Vectorization Models Saved.")

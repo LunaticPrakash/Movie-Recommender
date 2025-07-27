@@ -8,7 +8,7 @@
 }
 
 .result__table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   font-size: 14px;
   overflow-x: auto;
@@ -52,8 +52,27 @@
 .pagination__page {
   font-weight: 600;
   color: #2c3e50;
+  white-space: nowrap;
 }
 
 .pagination__button{
   max-width: fit-content;
 }
+
+
+@media screen and (max-width: 500px) {
+  .result__table {
+    font-size: 12px;
+    
+  }
+
+  .pagination__page {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .pagination__button{
+  font-size: 12px;
+}
+}
+

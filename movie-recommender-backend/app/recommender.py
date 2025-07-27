@@ -1,8 +1,8 @@
-import pickle
+import joblib
 
-movies = pickle.load(open('models/movies.pkl', 'rb'))
-similarity_tfidf = pickle.load(open('models/similarity_tfidf.pkl', 'rb'))
-similarity_count = pickle.load(open('models/similarity_count.pkl', 'rb'))
+movies = joblib.load('models/movies.joblib')
+similarity_tfidf = joblib.load('models/similarity_tfidf.joblib')
+similarity_count = joblib.load('models/similarity_count.joblib')
 
 
 def search_movies(movie_title):

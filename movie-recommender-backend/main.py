@@ -8,4 +8,5 @@ CORS(app)
 register_routes(app)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    print("Flask app started!")
+    app.run(host='0.0.0.0')

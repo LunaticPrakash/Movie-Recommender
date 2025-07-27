@@ -68,9 +68,13 @@ function App() {
         </div>
       </div>
       <p className="note__info">
-  Note: The dataset contains mostly Hollywood movies, so results may be biased toward them.
-  Try searching for titles like <strong>Avatar</strong>, <strong>Batman</strong>, <strong>Superman</strong>, etc. Also the responses might be delayed due to free tier deployment.
-</p>
+        Note: The dataset contains mostly Hollywood movies, so results may be biased toward them.
+        Try searching for titles like <strong>Avatar</strong>, <strong>Batman</strong>, <strong>Superman</strong>, etc. Also the responses might be delayed due to free tier deployment.
+      </p>
+
+      <footer className="footer">
+        Built with React, Flask, ML. — <strong>Prakash</strong>
+      </footer>
     </>
   );
 }

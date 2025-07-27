@@ -59,6 +59,14 @@
   color: #2c3e50;
 }
 
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
 @media screen and (max-width: 500px) {
   .container {
     width: 95%;

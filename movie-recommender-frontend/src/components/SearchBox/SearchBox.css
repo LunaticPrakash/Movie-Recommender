@@ -21,3 +21,9 @@
 .searchbox__input:focus {
   border-color: #2c3e50;
 }
+
+@media screen and (max-width: 500px) {
+.searchbox__input {
+    width: 90%;
+  }
+}

@@ -69,7 +69,7 @@ function App() {
       </div>
       <p className="note__info">
   Note: The dataset contains mostly Hollywood movies, so results may be biased toward them.
-  Try searching for titles like <strong>Avatar</strong>, <strong>Batman</strong>, <strong>Superman</strong>, etc.
+  Try searching for titles like <strong>Avatar</strong>, <strong>Batman</strong>, <strong>Superman</strong>, etc. also the responses might be delayed due to free tier deployment.
 </p>
     </>
   );

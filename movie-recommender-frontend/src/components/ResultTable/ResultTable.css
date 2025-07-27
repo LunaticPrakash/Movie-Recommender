@@ -12,13 +12,11 @@
   width: 100%;
 }
 
-/* Make table layout fixed and scrollable if too wide */
 .result__table {
   width: 100%;
-  min-width: 600px; /* Ensure horizontal scrolling on small screens */
+  min-width: 600px;
   border-collapse: collapse;
   font-size: 14px;
-  table-layout: fixed;
 }
 
 .result__table thead {
@@ -31,10 +29,26 @@
   border: 1px solid #ddd;
   padding: 12px 16px;
   text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
+
+
+.result__table td:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #fff;
+  color: #000;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  white-space: normal;
+  max-width: 300px;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+}
+
 
 .result__table tbody tr:nth-child(even) {
   background-color: #f3f8ff;

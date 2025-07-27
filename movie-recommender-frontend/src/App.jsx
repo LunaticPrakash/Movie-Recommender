@@ -73,7 +73,7 @@ function App() {
       </p>
 
       <footer className="footer">
-        Built with React, Flask, ML. — <strong>Prakash</strong>
+        Built with Python(Flask, ML) and ReactJS. — <strong>Prakash</strong>
       </footer>
     </>
   );

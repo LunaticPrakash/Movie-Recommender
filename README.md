@@ -33,17 +33,8 @@ A full-stack content-based movie recommendation system that suggests similar mov
 
 ## 📸 Preview:
 
-- **Home Page**  
-  ![Home Page](https://i.imgur.com/7nNwG8H.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/82c78f45-047f-4cee-a007-54fac9460923" />
 
-- **Search Suggestions**  
-  ![Search Suggestions](https://i.imgur.com/SzC4aKf.png)
-
-- **Recommendations Result Page**  
-  ![Recommendations](https://i.imgur.com/vbK5eRu.png)
-
-- **Genre Filter View**  
-  ![Genre Filter](https://i.imgur.com/ug8JdbR.png)
 
 ---
 

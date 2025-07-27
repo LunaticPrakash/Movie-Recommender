@@ -21,12 +21,14 @@ function App() {
     setResultType(null);
 
     try {
-      const response = type === 'title'
-        ? await searchByTitle(inputValue, selected)
-        : await searchByGenre(inputValue, selected);
-      console.log("response : ", typeof(response));
-      setResults(response.recommendations);
-      setResultType(type);
+      if (inputValue) {
+        const response = type === 'title'
+          ? await searchByTitle(inputValue, selected)
+          : await searchByGenre(inputValue, selected);
+        console.log("response : ", typeof (response));
+        setResults(response.recommendations);
+        setResultType(type);
+      }
     } catch (err) {
       console.error('Search failed:', err);
     } finally {
@@ -61,9 +63,9 @@ function App() {
           <SearchButton text={"Search By Genre"} onClick={() => handleSearch("genre", selected)} />
         </div>
 
-        <ResultTable data={results} type={resultType} />
-
-
+        <div className='container__table'>
+          <ResultTable data={results} type={resultType} />
+        </div>
       </div>
     </>
   );

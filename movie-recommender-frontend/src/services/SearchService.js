@@ -7,11 +7,6 @@ export const searchByTitle = async (title, mode = 'tfidf') => {
         const response = await axios.get(`${BASE_URL}/recommend-by-title`, {
             params: { title, mode },
         });
-        console.log("Raw axios response:", response);                 // Full response object
-        console.log("response.data:", response.data);                 // Parsed data
-        console.log("typeof response.data:", typeof response.data);   // Should be 'object'
-        console.log("response.data.recommendations:", response.data.recommendations);
-        console.log("typeof response.data.recommendations:", typeof response.data.recommendations);
 
         return response.data;
     } catch (error) {

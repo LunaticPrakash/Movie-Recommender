@@ -1,14 +1,17 @@
 .result__container {
   margin-top: 3rem;
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .result__table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  flex: 1;
 }
 
 .result__table thead {

@@ -11,8 +11,9 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
-  flex: 1;
+  overflow-x: auto;
 }
+
 
 .result__table thead {
   background-color: #5995fd;

@@ -40,7 +40,6 @@
 }
 
 .container__table{
-  display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
 }

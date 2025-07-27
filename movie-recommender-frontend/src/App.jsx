@@ -9,6 +9,7 @@ import Loader from './components/Loader/Loader.jsx';
 import ResultTable from './components/ResultTable/ResultTable.jsx';
 
 function App() {
+  const [searchClicked, setSearchClicked] = useState(false);
   const [selected, setSelected] = useState('tfidf');
   const [inputValue, setInputValue] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,7 @@ function App() {
   const [resultType, setResultType] = useState(null);
 
   const handleSearch = async (type, selected) => {
+    setSearchClicked(true);
     setLoading(true);
     setResults([]);
     setResultType(null);
@@ -64,7 +66,7 @@ function App() {
         </div>
 
         <div className='container__table'>
-          <ResultTable data={results} type={resultType} />
+          {searchClicked && !loading && <ResultTable data={results} type={resultType} />}
         </div>
       </div>
       <p className="note__info">

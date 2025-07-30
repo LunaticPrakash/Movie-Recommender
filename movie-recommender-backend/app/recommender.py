@@ -17,7 +17,9 @@ def search_movies(movie_title):
 
 def recommend_by_title(title, mode='tfidf'):
     title = title.lower()
-    matched = movies[movies['title'].str.lower().str.contains(title)]
+    matched = movies[movies['title'].str.lower() == title]
+    if matched.empty:
+        matched = movies[movies['title'].str.lower().str.contains(title)]
     if matched.empty:
         return []
     index = matched.index[0]
@@ -28,7 +30,7 @@ def recommend_by_title(title, mode='tfidf'):
     result = []
     for i, score in similarity_scores:
         if score == 0:
-            continue
+            break
         row = movies.iloc[i]
         result.append({
             'title': row['title'],

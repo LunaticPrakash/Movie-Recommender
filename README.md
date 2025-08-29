@@ -3,9 +3,7 @@
 A full-stack content-based movie recommendation system that suggests similar movies using NLP techniques like **TF-IDF** and **CountVectorizer**. Users can search by title or filter by genre to receive intelligent recommendations based on metadata similarity.
 
 **Live Site:**  
-🔗 [Frontend](https://movie-recommender-frontend-i255.onrender.com/)  
-🔗 [Backend API (Render)](https://movie-recommender-q93t.onrender.com/)
-/
+🔗 (https://movie-recommender-frontend-i255.onrender.com/ 
 
 ---
 

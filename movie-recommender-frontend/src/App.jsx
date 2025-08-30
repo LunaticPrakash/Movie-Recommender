@@ -75,7 +75,7 @@ function App() {
       </p>
 
       <footer className="footer">
-        Built with Python(Flask, ML) and ReactJS. — <strong>Prakash</strong>
+        Built with Python(Flask, ML) and ReactJS. — <strong>Prakash</strong><br/>
         <a href="https://github.com/LunaticPrakash/Movie-Recommender">Github Link</a>
       </footer>
     </>

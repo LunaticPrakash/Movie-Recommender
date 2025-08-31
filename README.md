@@ -7,34 +7,28 @@ A full-stack content-based movie recommendation system that suggests similar mov
 
 ---
 
-## 🚀 Status:
-**Deployed**
-
----
-
-## 🛠️ Technologies Used:
+## Technologies Used:
 - **Backend:** Python, Flask, Scikit-learn, Joblib  
 - **Frontend:** ReactJS, Vite, Axios  
 - **Deployment:** Render (both frontend & backend)
 
 ---
 
-## ✨ Features:
-- 🔍 **Smart search**: Get similar movie recommendations based on title or genre.
-- 🧠 **NLP-based logic**: Supports both TF-IDF and CountVectorizer techniques for vector similarity.
-- ⚡ **Fast API**: Optimized model loading for sub-second response time.
-- 🌐 **Deployed frontend** with real-time search, filter by genre, and responsive design.
-- 📁 **Persistent model storage** with Joblib to avoid recomputation and reduce memory usage.
-- 📊 **Logging support** for better debugging and performance monitoring.
+##  Features:
+- **Smart search**: Get similar movie recommendations based on title or genre.
+- **NLP-based logic**: Supports both TF-IDF and CountVectorizer techniques for vector similarity.
+- **Fast API**: Optimized model loading for sub-second response time.
+- **Deployed frontend** with real-time search, filter by genre, and responsive design.
+- **Persistent model storage** with Joblib to avoid recomputation and reduce memory usage.
 
 ---
 
-## 📸 Preview:
+## Screenshots:
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/82c78f45-047f-4cee-a007-54fac9460923" />
 
 
 ---
 
-## 👨‍💻 Dev:
+## Dev:
 **Prakash Gupta**
